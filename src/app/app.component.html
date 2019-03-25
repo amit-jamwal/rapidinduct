@@ -3,7 +3,9 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="javascript:void(0)" [routerLink]="['/dashboard']">Dashboard</a>
       <a class="nav-item nav-link" href="javascript:void(0)" [routerLink]="['/register']">Register </a>
-      <a class="nav-item nav-link" href="javascript:void(0)">Contact</a>
+      <a class="nav-item nav-link" href="javascript:void(0)" [routerLink]="['/create-training']">Create Training</a>
+      <a class="nav-item nav-link" href="javascript:void(0)" [routerLink]="['/edit-training']">Edit Training</a>
+      <a class="nav-item nav-link" href="javascript:void(0)" [routerLink]="['/create-quiz']">Create Training Quiz</a>
     </div>
   </div>
   <div class="navbar-expand">
@@ -12,13 +14,4 @@
     </div>
   </div>
 </nav>
-<div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
-</div>
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 offset-sm-3"><router-outlet></router-outlet></div>
-    </div>
-  </div>
-</div>
+<div class="col-sm-10 offset-sm-1"><router-outlet></router-outlet></div>

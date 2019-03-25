@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Rapid Induct';
+  // title = 'Rapid Induct';
   public showNavBar: boolean = false;
   constructor(private authenticationService: AuthenticationService, private router: Router) {}
 

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="divTable blueTable">
+    <div class="divTableHeading">
+      <div class="divTableRow">
+        <div class="divTableHead">Training Name</div>
+        <div class="divTableHead">Doccument Name</div>
+        <div class="divTableHead">Download</div>
+      </div>
+    </div>
+    <div class="divTableBody">
+      <div *ngFor="let training of trainingList" class="divTableRow">
+        <div class="divTableCell">{{ training.trainingName }}</div>
+        <div class="divTableCell">{{ training.description }}</div>
+        <div class="divTableCell">
+          <a href="javascript:void(0)" (click)="downloadTraining(training.filePath)">
+            <img src="./assets/images/icons8-document-26.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="trainingList.length === 0">No Triaining Found</div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
-const URL = 'http://localhost:3000/doc/upload';
+const URL = 'http://35.165.48.244:3001/doc/upload';
 
 @Component({
   selector: 'app-create-training',

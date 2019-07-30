@@ -7,6 +7,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { CreateTrainingComponent } from './create-training/create-training.component';
 import { EditTrainingComponent } from './edit-training/edit-training.component';
 import { TrainingQuizComponent } from './training-quiz/training-quiz.component';
+import { AssignTrainingComponent } from './assign-training/assign-training/assign-training.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'create-training', component: CreateTrainingComponent, canActivate: [AuthGuard] },
   { path: 'edit-training', component: EditTrainingComponent, canActivate: [AuthGuard] },
   { path: 'create-quiz', component: TrainingQuizComponent, canActivate: [AuthGuard] },
+  { path: 'assign-training', component: AssignTrainingComponent, canActivate: [AuthGuard] },
 
   { path: '**', redirectTo: '' }
 ];

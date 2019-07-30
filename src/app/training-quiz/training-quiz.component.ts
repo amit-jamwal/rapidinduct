@@ -10,8 +10,8 @@ import { CommonService } from '../services/common.service';
 export class TrainingQuizComponent implements OnInit {
   public trainingQuizForm: FormGroup;
   public trainingList: any = [];
-  public submitted: boolean = false;
-  constructor(private formBuilder: FormBuilder, private commonService: CommonService) {}
+  public submitted = false;
+  constructor(private formBuilder: FormBuilder, private commonService: CommonService) { }
 
   ngOnInit() {
     this.getTrainingList();
@@ -27,7 +27,7 @@ export class TrainingQuizComponent implements OnInit {
       answer: new FormControl('', Validators.required)
     });
   }
-  //FUNCTION TO GET FORM FIELDS VALUES...
+  // FUNCTION TO GET FORM FIELDS VALUES...
   get formField() {
     return this.trainingQuizForm.controls;
   }
@@ -40,16 +40,16 @@ export class TrainingQuizComponent implements OnInit {
   }
   addTrainingQuestion() {
     this.submitted = true;
-    //STOP USER IF LOGIN FORM IS INVALID...
+    // STOP USER IF LOGIN FORM IS INVALID...
     if (this.trainingQuizForm.invalid) {
-      console.log('Trianing is required', this.formField.training);
-      let a = document.getElementsByClassName('ng-select-container');
-      console.log(a);
+      // console.log('Trianing is required', this.formField.training);
+      // let a = document.getElementsByClassName('ng-select-container');
+      // console.log(a);
       return;
     }
 
     const data = {
-      training: this.formField.training.value,
+      trainingId: this.formField.training.value,
       question: this.formField.question.value,
       option1: this.formField.option1.value,
       option2: this.formField.option2.value,
@@ -70,6 +70,6 @@ export class TrainingQuizComponent implements OnInit {
 
   updateValue(event) {
     // console.log(event, i);
-    if (event) this.trainingQuizForm.controls.training.setValue(event._id);
+    if (event) { this.trainingQuizForm.controls.training.setValue(event._id); }
   }
 }

@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
-const URL = 'http://35.165.48.244:3001/doc/upload';
+const URL = 'http://localhost:3001/doc/upload'; // 'http://35.165.48.244:3001/doc/upload';
 
 @Component({
   selector: 'app-create-training',
@@ -16,7 +16,7 @@ export class CreateTrainingComponent implements OnInit {
   public uploader: FileUploader = new FileUploader({ url: URL, itemAlias: 'photo' });
   @ViewChild('uploadFile') uploadElRef: ElementRef;
 
-  //FUNCTION TO GET FORM FIELDS VALUES...
+  // FUNCTION TO GET FORM FIELDS VALUES...
   get formField() {
     return this.trainingForm.controls;
   }
@@ -27,7 +27,8 @@ export class CreateTrainingComponent implements OnInit {
     this.trainingForm = this.formBuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
-      passingCriteria: ['', Validators.required]
+      passingCriteria: ['', Validators.required],
+      defaultTraining: [false, Validators.required]
     });
   }
 
@@ -43,8 +44,8 @@ export class CreateTrainingComponent implements OnInit {
     this.uploader.onAfterAddingFile = file => {
       file.withCredentials = false;
     };
-    //overide the onCompleteItem property of the uploader so we are
-    //able to deal with the server response.
+    // overide the onCompleteItem property of the uploader so we are
+    // able to deal with the server response.
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
       console.log('ImageUpload:uploaded:', item, status, response);
       this.uploadElRef.nativeElement.value = null;

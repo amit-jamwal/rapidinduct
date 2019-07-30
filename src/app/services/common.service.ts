@@ -30,10 +30,10 @@ export class CommonService {
 
   public downloadTraining(file): Observable<any> {
     // Create url
-    let url = this.apiUrl + 'doc/download';
-    var body = { filename: file };
+    const url = this.apiUrl + 'doc/download';
+    const body = { filename: file };
 
-    let header = new HttpHeaders();
+    const header = new HttpHeaders();
     header.append('Content-disposition', 'attachment; filename=' + file);
     header.append('Content-Transfer-Encoding', 'stream');
     header.append('Content-Type', 'base64');

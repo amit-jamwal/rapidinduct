@@ -19,11 +19,37 @@ import { EditTrainingComponent } from './edit-training/edit-training.component';
 import { TrainingQuizComponent } from './training-quiz/training-quiz.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { UploadComponent } from './upload/upload.component';
+import { AssignTrainingComponent } from './assign-training/assign-training/assign-training.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DashboardComponent, ForgotPasswordComponent, RegisterUserComponent, CreateTrainingComponent, EditTrainingComponent, TrainingQuizComponent, UploadComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, NoopAnimationsModule, ReactiveFormsModule, HttpClientModule, routing, MatButtonModule, MatCheckboxModule, FormsModule, NgSelectModule, FileUploadModule],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    ForgotPasswordComponent,
+    RegisterUserComponent,
+    CreateTrainingComponent,
+    EditTrainingComponent,
+    TrainingQuizComponent,
+    UploadComponent,
+    AssignTrainingComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    routing,
+    MatButtonModule,
+    MatCheckboxModule,
+    FormsModule,
+    NgSelectModule,
+    FileUploadModule,
+    Ng2SmartTableModule
+  ],
   providers: [AuthGuard, AuthenticationService, CommonService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

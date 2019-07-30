@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row" [ngClass]="{ 'disable_div': !isSystemParameterActive}">
+      <!-- Form before log grid -->
+      <div class="col-md-7">
+          <div class=" card ">
+              <div class="card-header card-header-primary ">
+                  <h4 class="card-title ">{{ ''}}</h4>
+                  <p class="card-category ">{{''}}</p>
+              </div>
+              <div class="card-body ">
+                  <div class="row mb-3 ">
+                      <div class="input-small custom-workschedule-dropdown col-6 ">
+                          <label>user name</label>
+                          <ng-select class="custom-workschedule-dropdownn" [items]="relation1" [virtualScroll]="true" bindLabel="attributeValue" bindValue="attributeValue" [ngModel]="relation1?.attributeValue"> 
+                             
+                          </ng-select>
+                      </div>
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table fixed_layout">
+                          <thead>
+                              <th class="relatedAttribute_column">jkjjj</th>
+                              <th class="btn_column"></th>
+                              <th class="connectingRelations_column">jjjj</th>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td class="relatedAttribute_column">
+                                      <select class="selectDropdown-style dd-width" id="AvailableSelectedMembers" multiple="multiple" name="AvailableSelectedMembers" (click)="getTheValueForRelation2($event)">
+                                          <option  class="relationOption_padding" value="0">select</option>
+                                      </select>
+                                  </td>
+                                  <td class="btn_column">
+                                      <div class="pb-1">
+                                          <button [attr.disabled]="!enableSettingValueForRelation2 ? '' : null" name="add" (click)="addTheValueForRelation2()">
+                                              <em class="material-icons mat_arrow_icons">
+                                                  arrow_right
+                                              </em>
+                                          </button>
+                                      </div>
+                                      <div class="pt-1">
+                                          <button [attr.disabled]="!disableSettingValueForRelation2 ? '' : null" name="remove" (click)="deleteTheValueForRelation2($event)">
+                                              <em class="material-icons mat_arrow_icons">
+                                                  arrow_left
+                                              </em>
+                                          </button>
+                                      </div>
+                                  </td>
+                                  <td class="connectingRelations_column">
+                                      <select class="selectDropdown-style dd-width" (click)="getTheValueToDeselectRelation2($event)" id="RequestedSelectedMembers" multiple="multiple" name="RequestedSelectedMembers">
+                                          <option class="relationOption_padding" value="{{selectedRelation2.attributeValue}}">
+                                              select</option>
+                                      </select>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="col-md-5">
+          <div class="card">
+              <div class="card-header card-header-primary">
+                  <h4 class="card-title">ddd</h4>
+              </div>
+              <div class="card-body">
+                  <div class="table-responsive">
+                    <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

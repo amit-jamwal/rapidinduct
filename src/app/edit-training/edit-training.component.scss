@@ -59,3 +59,27 @@ div.blueTable {
 .divTableBody {
   display: table-row-group;
 }
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label:before {
+  content: "";
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+}
+
+/* appearance of checked radiobutton */
+input[type="radio"]:checked + label:before{
+  background-color: green;
+}
+
+/* appearance of checked radiobutton */
+input[type="radio"] + label:before{
+  background-color: red;
+}
